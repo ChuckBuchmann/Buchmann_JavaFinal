@@ -2,6 +2,8 @@ package FinalProject;
 
 // Realized after making Potion that the highest hierarchy in classes should probably be Item as then I can simply make
 // a list of Items for player inventory
+
+//Keeping comments mostly for myself to remind myself what stuff does - it's been a while
 public abstract class Item implements Interact {
 
 	// protected fields because eclipse yelled at me
@@ -11,7 +13,7 @@ public abstract class Item implements Interact {
 	protected String takeDescription;
 	protected String inspectDescription;
 	
-	// Ty GPT - I need getters to access these variables now
+	// Ty GPT - I need getters to access these variables from children now
 	public String getName() {
 	    return name.toString();
 	}
