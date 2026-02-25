@@ -1,6 +1,6 @@
 package FinalProject;
 
-public abstract class Potion extends Item implements Interact {
+public class Potion extends Item implements Interact {
 	
 	
 	public Potion(String name, String takeDescription, String inspectDescription) {

@@ -1,6 +1,8 @@
 package FinalProject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /* 
  * For this assignment, I thought the most logical reason this project would need to access a database is to create save states 
@@ -13,6 +15,9 @@ import java.util.ArrayList;
 public class Player {
 
 	private ArrayList<Item> inventory;
+	
+    // ****** SET ****** Dunno if I'll keep this but it could be an interesting idea to keep track of potions specifically
+    private Set<Item> potionInventory;
 	
 	// TODO - Create a Room class...
 	private String /*Room*/ currentRoom;
@@ -88,7 +93,8 @@ public class Player {
 
 	// Player constructor for a fresh player
     public Player() {
-        this.inventory = new ArrayList<>();  
+        this.inventory = new ArrayList<>();
+        this.setPotionInventory(new HashSet<>());
         this.frontDoorKey = false;
         this.ingredientCupboardKey = false;
         this.gloves = false;
@@ -96,5 +102,14 @@ public class Player {
         this.consumeDeathCap = false;
         this.currentRoom = "Outside";
     }
+
+    
+	public Set<Item> getPotionInventory() {
+		return potionInventory;
+	}
+
+	public void setPotionInventory(Set<Item> potionInventory) {
+		this.potionInventory = potionInventory;
+	}
 	
 }

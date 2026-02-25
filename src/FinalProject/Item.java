@@ -1,10 +1,15 @@
 package FinalProject;
 
-// Realized after making Potion that the highest hierarchy in classes should probably be Item as then I can simply make
-// a list of Items for player inventory
-
-//Keeping comments mostly for myself to remind myself what stuff does - it's been a while
-public abstract class Item implements Interact {
+/*
+ * Whipped out the documentation for this one
+ * Comparable and Comparator are both used to sort objects in Java
+ * The difference is that comparable defines the natural sorting of objects while comparator defines custom sorting logic, described programmatically
+ * In this case, I'm using a comparable to sort my list of Item objects (player inventory) alphabetically
+ * Actually, I've learned that you do need to set the sorting logic for a comparable, just that logic lives inside the class it's defined in
+ * A comparator uses a separate class to decide how to sort objects
+ * Not gonna pretend to know what that means exactly but I was confused on why I needed to add logic in this class to sort despite what I read
+*/
+public abstract class Item implements Interact, Comparable<Item> {
 
 	// protected fields because eclipse yelled at me
 	protected String name;
@@ -54,5 +59,11 @@ public abstract class Item implements Interact {
 
 	@Override
 	public abstract void mix();
+	
+	// ty GPT - this override just sets the logic for sorting alphabetically
+	@Override
+	public int compareTo(Item other) {
+	    return this.name.compareToIgnoreCase(other.name);
+	}
 
 }
