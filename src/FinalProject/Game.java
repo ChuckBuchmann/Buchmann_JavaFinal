@@ -314,7 +314,7 @@ public class Game {
 		                    System.out.println("I hurry back to the castle with my royal prize in hand.  "
 		                    		+ "\nI quickly get past the guards, who know of my quest.  "
 		                    		+ "\nI hurry to the throne room and burst through the doors.  "
-		                    		+ "\nThe bewildered king's eye siddenly light up as he recognizes my excitement, holding the flask high in the air.  "
+		                    		+ "\nThe bewildered king's eyes suddenly light up as he recognizes my excitement, holding the flask high in the air.  "
 		                    		+ "\nI hand it to my liege and watch as he uncorks the flask and takes a good, long whiff.  "
 		                    		+ "\n'That's the stuff,' he murmurs, before removing his crown.  "
 		                    		+ "\nHe dabs some of the liquid on his bald head and beams with excitement.  "

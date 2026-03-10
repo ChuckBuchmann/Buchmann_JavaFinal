@@ -201,42 +201,42 @@ public class Initializer {
 		
 		Room frontDoor = new Room(
 			    "frontdoor",
-			    "I'm standing outside the structure."
-			    + "  The setting sun drawns long shadows against the gnarled wood."
-			    + "  An imposing door stands to my east, with a prominent and large circular window flanking it."
-			    + "  To the south, there is a path that leads around the corner of the house."
-			    + "  Some mushrooms grow at the foot of the door.",
+			    "I'm standing outside the structure.\n"
+			    + "  The setting sun drawns long shadows against the gnarled wood.\\n"
+			    + "  An imposing door stands to my east, with a prominent and large circular window flanking it.\\n"
+			    + "  To the south, there is a path that leads around the corner of the house.\\n"
+			    + "  Some mushrooms grow at the foot of the door.\n",
 			    frontDoorItems,
 			    null);
 
 		Room sideGarden = new Room(
 			    "sidegarden",
 			    "I follow the path to a surprisingly calm garden located at the side of the building.  "
-			    + "There is an unkempt bush bordering the house with a big window above it, too high to reach.  "
-			    + "There is a large planter with several different kinds of flowers, most prominently featuring a tall and stalky plant with yellow berries.  "
-			    + "At the foot of the planter rests an ugly statue of some creature.  "
-			    + "The path I came from wraps back around the house to the north.",
+			    + "\nThere is an unkempt bush bordering the house with a big window above it, too high to reach.  "
+			    + "\nThere is a large planter with several different kinds of flowers, most prominently featuring a tall and stalky plant with yellow berries.  "
+			    + "\nAt the foot of the planter rests an ugly statue of some creature.  "
+			    + "\nThe path I came from wraps back around the house to the north.\n",
 			    sideGardenItems,
 			    null);
 		
 		Room window = new Room(
 			    "window",
-			    "As i enter the structure, I am overwhelmed by the aromas wafting in the stagnant air.  "
-			    + "All manner of natural scents can be detected combined with disturbing traces of death.  "
-			    + "A large cauldron dominates the space in the middle of the room, bubbling over a fire with what appears to be water.  "
-			    + "There is a bookshelf on my left wall with only three books on it.  "
-			    + "On the far left side is a desk with a small vial and a gigantic tome on it.  "
-			    + "To the right of the desk rests a small chest.  on the right wall is a long cupboard made of dark wood.  "
-			    + "There is a ground hatch on the far eastern side of the abode and the window I entered is behind me to the west.",
+			    "As I enter the structure, I am overwhelmed by the aromas wafting in the stagnant air.  "
+			    + "\nAll manner of natural scents can be detected combined with disturbing traces of death.  "
+			    + "\nA large cauldron dominates the space in the middle of the room, bubbling over a fire with what appears to be water.  "
+			    + "\nThere is a bookshelf on my left wall with only three books on it.  "
+			    + "\nOn the far left side is a desk with a small vial and a gigantic tome on it.  "
+			    + "\nTo the right of the desk rests a small chest.  on the right wall is a long cupboard made of dark wood.  "
+			    + "\nThere is a ground hatch on the far eastern side of the abode and the window I entered is behind me to the west.\n",
 			    shackItems,
 			    statue);
 
 		Room cellar = new Room(
 			    "cellar",
-			    "I escend the rickety stairs to a damp cellar beneath the shack. The air smells of mold.  "
-			    + "I can see some glowing mushrooms in the far corner.  "
-			    + "A spider the size of a dinnerplate rests menancingly in the corner adjacent to that.  "
-			    + "The only exit is the staircase to the west.",
+			    "I descend the rickety stairs to a damp cellar beneath the shack. The air smells of mold.  "
+			    + "\nI can see some glowing mushrooms in the far corner.  "
+			    + "\nA spider the size of a dinnerplate rests menancingly in the corner adjacent to that.  "
+			    + "\nThe only exit is the staircase to the west.\n",
 			    cellarItems,
 			    null);
 		
