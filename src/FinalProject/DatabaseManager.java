@@ -56,7 +56,7 @@ public class DatabaseManager {
             pstmt.setBoolean(4, player.hasGloves());
             pstmt.setBoolean(5, player.hasObjectiveComplete());
             pstmt.setBoolean(6, player.hasDeathCap());
-            pstmt.setString(7, player.getCurrentRoom());
+            pstmt.setObject(7, player.getCurrentRoom());		// I tried setObject and it just worked in a rare 1% chance of something like that happening
 
             pstmt.executeUpdate();
             System.out.println("Player saved successfully.");
@@ -77,7 +77,7 @@ public class DatabaseManager {
 
             if (rs.next()) {
 
-                Player player = new Player();
+                Player player = new Player(null);
                 
                 // Useful methods I've never seen before, thanks GPT
                 // Also thanks SQLite - this is truly a powerful tool for quick projects
@@ -86,7 +86,7 @@ public class DatabaseManager {
                 player.setGloves(rs.getBoolean("gloves"));
                 player.setObjectiveComplete(rs.getBoolean("objective_complete"));
                 player.setDeathCap(rs.getBoolean("death_cap"));
-                player.setCurrentRoom(rs.getString("current_room"));
+                player.setCurrentRoom((Room) rs.getObject("current_room"));
 
                 System.out.println("Player loaded successfully.");
                 return player;

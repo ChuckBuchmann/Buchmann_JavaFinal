@@ -14,14 +14,7 @@ public class Potion extends Item implements Interact {
 	}
 	
     @Override
-    public void read() {
+    public void read(Player player) {
         System.out.println("The label reads: \"" + getName() + "\".");
     }
-	
-	// Maybe mixing would go here... could add some logic to ask for another potion and see if there are any effects
-	// Sounds complicated, could be fun though
-	@Override
-	public void mix() {
-		System.out.println("Mix this potion with what?");
-	}	
 }

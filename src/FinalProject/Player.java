@@ -19,36 +19,48 @@ public class Player {
     // ****** SET ****** Dunno if I'll keep this but it could be an interesting idea to keep track of potions specifically
     private Set<Item> potionInventory;
 	
-	// TODO - Create a Room class...
-	private String /*Room*/ currentRoom;
-	
 	private boolean frontDoorKey;
 	private boolean ingredientCupboardKey;
 	private boolean gloves;
 	private boolean objectiveComplete;
 	private boolean consumeDeathCap;
+	private Room currentRoom;
 	
 	// Long list of getters and setters for above fields
 	public ArrayList<Item> getInventory() {
 		return inventory;
 	}
 	
+	public Item getOneFromInventory(String itemName) {
+		
+	    for (Item item : inventory) {
+	        if (item.getName().equals(itemName)) {
+	            return item;
+	        }
+	    }
+	    return null;
+	}
+	
 	public void setInventory(ArrayList<Item> inv) {
 		inventory = inv;
 	}
 	
-	// ty GPT - helper function to quickly add items to the inventory
+	// ty GPT - helper function to quickly add and remove items to the inventory
     public void addItem(Item item) {
         inventory.add(item);
     }
-	
-	public String getCurrentRoom() {
-		return currentRoom;
+    
+    public void removeItem(Item item) {
+        inventory.remove(item);
+    }
+    
+	public Set<Item> getPotionInventory() {
+		return potionInventory;
 	}
-	// TODO - figure out how to move rooms.  Maybe using this?
-	public void setCurrentRoom(String currentRoom) {
-		this.currentRoom = currentRoom;
-	}		
+
+	public void setPotionInventory(Set<Item> potionInventory) {
+		this.potionInventory = potionInventory;
+	}
 
 	public boolean hasFrontDoorKey() {
 		return frontDoorKey;
@@ -89,10 +101,18 @@ public class Player {
 	public void setDeathCap(boolean deathCap) {
 		this.consumeDeathCap = deathCap;
 	}
+	
+	public Room getCurrentRoom() {
+		return currentRoom;
+	}
+	
+	public void setCurrentRoom(Room newRoom) {
+		this.currentRoom = newRoom;
+	}
 	// End Getters / Setters
 
-	// Player constructor for a fresh player
-    public Player() {
+	// Player constructor for a fresh player - or a player loading in
+    public Player(Room startingRoom) {
         this.inventory = new ArrayList<>();
         this.setPotionInventory(new HashSet<>());
         this.frontDoorKey = false;
@@ -100,16 +120,6 @@ public class Player {
         this.gloves = false;
         this.objectiveComplete = false;
         this.consumeDeathCap = false;
-        this.currentRoom = "Outside";
+        this.currentRoom = startingRoom;
     }
-
-    
-	public Set<Item> getPotionInventory() {
-		return potionInventory;
-	}
-
-	public void setPotionInventory(Set<Item> potionInventory) {
-		this.potionInventory = potionInventory;
-	}
-	
 }

@@ -1,11 +1,22 @@
 package FinalProject;
 
-import java.util.HashSet;
-import java.util.Set;
+//import java.util.HashSet;
+//import java.util.Set;
+//import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
+    	Game game = new Game();
+    	
+    	Initializer.InitializeGame(game);
+    	
+    	game.Run();
+    	
+    	
+    	
+    	
+    	/*
         DatabaseManager.createTables();
         
         Player you = new Player();
@@ -32,6 +43,7 @@ public class Main {
         for (Item item : you.getPotionInventory()) {
             System.out.println(item.getName());
         }
+        */
         
     }
 }
