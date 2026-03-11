@@ -15,7 +15,7 @@ public class DeadlyObject extends Item implements Interact {
         System.out.println("I picked up " + takeDescription + ".");	// And display the take message
         
     	if (player.getOneFromInventory("gloves") == null) {
-    		game.MURDER();	// Observe, the entire reason I had to add the Game object to my take, my all important take, breaking EVERYTHING at once
+    		game.MURDER();	// Observe, the entire reason I had to add the Game object to my take, my all important take(), breaking EVERYTHING at once
     		
     	System.out.println("I instantly die.  Nice job.");
     	}

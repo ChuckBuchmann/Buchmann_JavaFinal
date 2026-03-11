@@ -70,4 +70,18 @@ public class Container extends StaticObject implements Interact {
         System.out.println("There's no need to lug that around.");
     }
     
+    // Show the contents of the container if its unlocked upon player inspection
+	@Override
+	public void inspect() {
+		System.out.println(inspectDescription);
+		
+		if (this.isLocked() == false) {
+		    System.out.println("Inside you see:");
+	
+		    for (Item item : contents) {
+		        System.out.println(item.takeDescription);
+		    }
+		}
+	}
+    
 }

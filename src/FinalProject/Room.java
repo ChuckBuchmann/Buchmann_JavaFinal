@@ -43,7 +43,7 @@ public class Room {
 		
 		if (roomItems.isEmpty() == false) {
 			for(Item item : roomItems) {
-	            description += "\n There is " + item.getTakeDescription() + " here.";
+	            description += "\nThere is " + item.getTakeDescription() + " here.";
 	        }
 		}
 		

@@ -14,7 +14,7 @@ public class Cauldron extends Container implements Interact {	// I tried reusing
 
     public void addIngredient(Item item) {
         ingredients.add(item);
-        System.out.println("I mix the " + item.takeDescription + " into the cauldron.");
+        System.out.println("I mix " + item.takeDescription + " into the cauldron.");
     }
 
     public boolean checkBrew() {
@@ -43,7 +43,7 @@ public class Cauldron extends Container implements Interact {	// I tried reusing
                 hasNightshade = true;
             }
             
-            if (item.name.equals("mandrake")) {
+            if (item.name.equals("root")) {
                 hasMandrake = true;
             }
         }
@@ -54,6 +54,11 @@ public class Cauldron extends Container implements Interact {	// I tried reusing
         }
 
         return false;
+    }
+    
+    @Override
+    public void take(Player player, Room room, Game game) {
+        System.out.println("The cauldron is way too heavy to move.");
     }
 	
 }

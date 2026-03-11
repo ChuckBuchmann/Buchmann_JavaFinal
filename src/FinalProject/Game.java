@@ -23,10 +23,9 @@ public class Game {
 
 	    scanner = new Scanner(System.in);
 	    gameInProgress = true;
-
-	    // TODO - message on loading the game for the first time
+	    
 	    System.out.println("After a long time spent on the road, I've finally arrived at the little house hidden in the woods."
-	    		+ " Well, actually, it's more like a shack.  But if my information is to be believed, I can acquire what I need from here...");
+	    		+ "\nWell, actually, it's more like a shack.  But if my information is to be believed, I can acquire what I need from here...");
 	    System.out.println();
 	    player.getCurrentRoom().DescribeRoom();
 	    
@@ -85,6 +84,8 @@ public class Game {
 	    	//-------------------------------------
 	        case "take": {
 	        	
+	        	System.out.println();
+	        	
 	        	Item specificItem = currentRoom.GetItemInRoom(specific);	// Check if the item exists in the current room
 	        	
 	        	// ty GPT for creating this unholy amalgamation for me
@@ -117,6 +118,8 @@ public class Game {
 
 	        //-------------------------------------
 	        case "inspect": {
+	        	
+	        	System.out.println();
 
 	            Item itemInRoom = currentRoom.GetItemInRoom(specific);
 	            Item itemInInventory = player.getOneFromInventory(specific);	// Cases are in the same scope by default for some reason unless use curly brackets
@@ -135,6 +138,8 @@ public class Game {
 	        
 	        //-------------------------------------
 	        case "use": {
+	        	
+	        	System.out.println();
 	            
 	            Item itemInRoom = currentRoom.GetItemInRoom(specific);
 	            Item itemInInventory = player.getOneFromInventory(specific);	// Find the item the player wants to use
@@ -182,6 +187,8 @@ public class Game {
 	        
 	        //-------------------------------------
 	        case "read": {
+	        	
+	        	System.out.println();
 	            
 	        	Item specificItem = currentRoom.GetItemInRoom(specific);   		// first, look in the room
 	            Item itemInInventory = player.getOneFromInventory(specific); 	// also check inventory (don't think I have any collectible readables but oh well)
@@ -220,6 +227,8 @@ public class Game {
 	            
 	        //-------------------------------------
 	        case "inventory":
+	        	
+	        	System.out.println();
 	            
 	        	ArrayList<Item> playerInventory = player.getInventory();
 	        	
@@ -237,12 +246,16 @@ public class Game {
 	        //-------------------------------------
 	        case "look":
 	        	
+	        	System.out.println();
+	        	
 	        	System.out.println(currentRoom.getRoomDescription());
 	    	            
 	            break;
 	            	            
 	        //-------------------------------------
 	        case "move":
+	        	
+	        	System.out.println();
 	            
 	        	// Nested switch to deal with multiple directions
 	        	switch(specific) {
@@ -271,6 +284,8 @@ public class Game {
 		        //-------------------------------------
 	            // Adding ingredients to the cauldron specifically
 		        case "mix": {
+		        	
+		        	System.out.println();
 		        	
 		            Item ingredient = player.getOneFromInventory(specific);
 
@@ -301,6 +316,8 @@ public class Game {
 		        // The final check on a completed potion
 		        case "brew": {
 		        	
+		        	System.out.println();
+		        	
 		        	// Make sure the cauldron is in the room
 		        	Item target = currentRoom.GetItemInRoom("cauldron");
 
@@ -309,7 +326,7 @@ public class Game {
 		                Cauldron cauldron = (Cauldron) target;
 
 		                if (cauldron.checkBrew()) {
-		                    System.out.println("The potion bubbles and glows brilliantly!  I quickly collect some of the potion into my flask and beat a hasty retreat.");
+		                    System.out.println("The mixture bubbles and glows brilliantly!  I quickly collect some of the potion into my flask and beat a hasty retreat.");
 		                    WINNER();
 		                    System.out.println("I hurry back to the castle with my royal prize in hand.  "
 		                    		+ "\nI quickly get past the guards, who know of my quest.  "
@@ -338,6 +355,8 @@ public class Game {
 	        //-------------------------------------
 	        case "help":
 	        	
+	        	System.out.println();
+	        	
 	        	System.out.println("I can do the following stuff:"
 	        			+ "\nTake something"
 	        			+ "\nInspect stuff"
@@ -358,12 +377,14 @@ public class Game {
 	        	
 	        	// TODO - figure out how to load ughhhhhhh
 	        	// ALSO SAVE AAAAAA
-	        	// I didn't 8(
+	        	// I didn't, outta time 8(
 	            
 	            break;
 	            
 	        //-------------------------------------
 	        case "quit":
+	        	
+	        	System.out.println();
 	        	gameInProgress = false;
 	            System.out.println("OK, just leave me here I guess.");
 	            break;
@@ -393,6 +414,9 @@ public class Game {
 	
 	// Method to prompt the player for more information
 	public String getFollowUpInput() {
+		
+		System.out.println();
+		
 	    System.out.print("> ");            
 	    return scanner.nextLine().trim().toLowerCase();
 	}
